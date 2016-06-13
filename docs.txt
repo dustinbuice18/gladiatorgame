@@ -7,3 +7,8 @@ Base Camp
 
 Work Experience:
 BTC Old Fashion Grocery
+
+
+activities:
+Working on vehicles.
+Playing any sport.
