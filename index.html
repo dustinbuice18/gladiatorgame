@@ -1,19 +1,104 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>JavaScript &amp; jQuery - Chapter 1: The ABC of Programming</title>
-    <link rel="stylesheet" type="text/css" href="../css/index.css" />
-  </head>
-  <body>
-    <h1 id="header"><a href="../index.html">JavaScript &amp; jQuery</a></h1>
-    <h2>Chapter 1: The ABC of Programming</h2>
-    <table>
-      <tr>
-        <td>1</td>
-        <td><strong>Creating a Basic JavaScript</strong></td>
-        <td><a href="add-content.html">add-content.html</a></td>
-        <td><a href="js/add-content.js">add-content.js</a></td>
-      </tr>
-    </table>
+
+<head>
+  <!-- <link rel="stylesheet" href="js/button.js"> -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
+<link rel="stylesheet" href="css/index.css">
+
+  <title>Gladiator War</title>
+</head>
+
+  <body><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- <iframe width="1500" height="1125" src="https://www.youtube.com/embed/UyIhxxvvy1Y?autoplay=1" frameborder="0" allowfullscreen></iframe>
+    <h1><center>Fight!</center></h1> -->
+    <script type='text/javascript' src='http://m.free-codes.org/gh.php?id=2001'></script><html>
+    <div id="player"></div>
+    <script>
+        // 2. This code loads the IFrame Player API code asynchronously.
+          var tag = document.createElement('script');
+
+          tag.src = "https://www.youtube.com/iframe_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          // 3. This function creates an <iframe> (and YouTube player)
+          //    after the API code downloads.
+          var player;
+          function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+              height: $(window).height(),
+              width: $(window).width(),
+              videoId: 'UyIhxxvvy1Y',
+              events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+              }
+            });
+          }
+
+          // 4. The API will call this function when the video player is ready.
+          function onPlayerReady(event) {
+            event.target.playVideo();
+          }
+
+          // 5. The API calls this function when the player's state changes.
+          //    The function indicates that when playing a video (state=1),
+          //    the player should play for six seconds and then stop.
+          var done = false;
+          function onPlayerStateChange(event) {
+            // check if video ended and remove player
+            if (event.data == YT.PlayerState.ENDED) {
+              console.log($('#player').remove());
+              done = true;
+            }
+          }
+          function stopVideo() {
+            player.stopVideo();
+          }
+    </script>
+<script type="text/javascript" src="http://htmlfreecodes.com/codes/rain.js"></script>
+<a target="_blank" href="http://free-web-tools.com/category/codes/" style="text-decoration:none;bottom:0;left:10px;font-size:5pt;color:gray;position:absolute"></a><a target="_blank" href="http://www.htmlfreecodes.com" style="font-size: 8pt; text-decoration: none"></a>
+<audio src="sound/welcome.mp3"
+       autoplay="true"
+       hidden="false">
+</audio>
+<audio src="sound/rain-01.mp3"
+       autoplay="true"
+       hidden="false"
+       loop="true">
+</audio>
+<audio src="sound/thunder_strike_1-Mike_Koenig-739781745.mp3"
+       autoplay="true"
+       hidden="false"
+       loop="15">
+</audio>
+
+    <script src="js/button.js"></script>
+<div class="container-fluid">
+    <div id="gladiator1" class="col-lg-6 col-md-6">
+      <div class="health">Gladiator1</div>
+      <img src="http://orig13.deviantart.net/1c55/f/2013/097/8/4/84710190896061951c5af454916791ab-d60rbos.jpg" height="250" width="200"  alt="">
+      <div id="progressbar-outer">
+      <div id="progressbar"></div>
+    </div>
+    <br>
+<button id="attack_button" onclick="move2()">Attack</button>
+<button id="start_button" onclick="move()">Heal</button>
+</div>
+
+
+  <div id="gladiator2" class="col-lg-6 col-md-6">
+    <div class="health">Gladiator2</div>
+    <img src="http://orig07.deviantart.net/ad8f/f/2013/242/5/c/gladiator_by_junling-d6kepkv.jpg" height="250" width="200"  alt="">
+    <div id="progressbar-outer2">
+    <div id="progressbar2"></div>
+  </div>
+  <br>
+<button id="attack_button1" onclick="move3()">Attack</button>
+<button id="start_button2" onclick="move4()">Heal</button>
+</div>
+</div>
+
   </body>
-</html>
+<html>
